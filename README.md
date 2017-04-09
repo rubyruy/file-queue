@@ -77,3 +77,7 @@ The downside is that it can't be assured that the messages are processed in orde
 To remove all items from a queue, for example for testing purposes, use clear.
 
     queue.clear(function(err) { if (err) throw err; });
+
+## Stop monitoring
+
+You can stop recieving events from a queue by calling `queue.stop()`. You can check to see if a queue is already stopped using `queue.isRunning()`. Running queues keep file watch handles open, so Node.JS will not shut down before all queues have been stopped.
